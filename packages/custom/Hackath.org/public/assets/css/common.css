@@ -1,0 +1,11 @@
+.MEAN-Logo {
+  height: 80%
+}
+
+.brand {
+	font-family: Roboto,Helvetica Neue,sans-serif;
+    font-weight: 300;
+    font-size: 32px;
+    letter-spacing: -.01em;
+    text-transform: lowercase;
+}
