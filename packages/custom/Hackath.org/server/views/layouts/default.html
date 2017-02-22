@@ -3,9 +3,13 @@
 {% include '../includes/head.html' %}
 
 <body data-ng-controller="StarterController" ng-cloak class="ng-cloak" ng-class="state" layout="column">
-    <md-toolbar layout="row" data-ng-include="'/meanStarter/views/system/header.html'" data-role="navigation"></md-toolbar>
+	<div layout="row">
+    <md-sidenav class="md-sidenav-left" md-is-locked-open="true" data-ng-include="'/meanStarter/views/system/header.html'" data-role="navigation"></md-sidenav>
+    <md-content style="min-height: 100%" flex layout-padding>
     <div data-ng-include="'/admin/views/index.html'"></div>
     {% block content %}{% endblock %}
+    </md-content>
+    </div>
     <!-- <section class="content">
         <section class="container">
             {% block content %}{% endblock %}

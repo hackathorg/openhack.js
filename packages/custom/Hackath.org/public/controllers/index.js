@@ -1,7 +1,8 @@
 'use strict';
 
-angular.module('mean.system').controller('IndexController', ['$scope', 'Global',
-  function ($scope, Global) {
+angular.module('mean.system').controller('IndexController', ['$scope', 'Global', '$rootScope',
+  function ($scope, Global, $rootScope) {
+    $rootScope.navbar = true;
     $scope.global = Global;
     $scope.sites = [{
       'name': 'makeapoint',

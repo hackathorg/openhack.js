@@ -18,8 +18,8 @@ BoilerPlate.register(function(app, auth, database, circles) {
 
   //We are adding a link to the main menu for all authenticated users
   BoilerPlate.menus.add({
-    title: 'boilerPlate example page',
-    link: 'boilerPlate example page',
+    title: 'boilerPlate',
+    link: 'boilerPlate',
     roles: ['authenticated'],
     menu: 'main'
   });

@@ -2,12 +2,9 @@
     'use strict';
 
     function BoilerPlate($stateProvider) {
-        $stateProvider.state('boilerPlate example page', {
-            url: '/boilerPlate/example',
+        $stateProvider.state('boilerPlate', {
+            url: '/landing',
             templateUrl: 'boiler-plate/views/index.html'
-        }).state('boilerPlate circles example', {
-            url: '/boilerPlate/example/:circle',
-            templateUrl: 'boiler-plate/views/example.html'
         });
     }
 

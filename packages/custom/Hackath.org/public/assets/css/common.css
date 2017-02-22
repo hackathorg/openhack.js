@@ -1,11 +1,18 @@
-.MEAN-Logo {
-  height: 80%
-}
-
 .brand {
 	font-family: Roboto,Helvetica Neue,sans-serif;
     font-weight: 300;
     font-size: 32px;
     letter-spacing: -.01em;
+    padding-top: 12px;
+    padding-bottom: 12px;
     text-transform: lowercase;
+}
+
+.md-button-side {
+	text-align: left;
+	padding-left: 20px;
+}
+
+.MEAN-Logo {
+  	height: 80%
 }
