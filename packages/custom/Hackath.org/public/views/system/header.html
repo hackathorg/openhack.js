@@ -1,9 +1,9 @@
 <div class="md-toolbar-tools" ng-controller="HeaderController as hdrctr">
 
-  <!-- <img src="/meanStarter/assets/img/hackathorg.png" alt="" class="MEAN-Logo"/>hackath.org -->
- <a style= "min-width:174px;"ui-sref="home" class="md-button brand">hackath.org</a >
+  <!-- <img src="/meanStarter/assets/img/openhack.js.png" alt="" class="MEAN-Logo"/>openhack.js -->
+ <a style= "min-width:174px;"ui-sref="home" class="md-button brand">openhack.js</a >
   <md-button class="md-buttonbrand" aria-label="Sign Up" ui-sref="auth.register" ng-if="!hdrctr.hdrvars.authenticated">
-    hackath.org
+    openhack.js
   </md-button>
   <md-button class="md-button" aria-label="{{item.link}}" ui-route="/{{item.link}}" ng-class="{active: $uiRoute}" ng-repeat="item in hdrctr.menus.main" ui-sref="{{item.link}}" mean-token="item.link">
     {{item.title}}<!--<div style="display:inline" ng-if="item.icon"><i style="font-size:14px"class="material-icons">{{item.icon}}</i></div>-->

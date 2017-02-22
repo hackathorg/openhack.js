@@ -1,9 +1,9 @@
 {
-  "name": "hackathorg-mainsite",
-  "description": "Hackath.org - The Hackathon Management Tool",
+  "name": "openhack.js-mainsite",
+  "description": "openhack.js - The Hackathon Management Tool",
   "version": "0.7.0",
   "private": false,
-  "author": "Hackath.org",
+  "author": "openhack.js",
   "contributors": [
     "Michael Holtom",
     "Jamie Mahoney",
@@ -12,7 +12,7 @@
   "mean": "0.7.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mholtom/Hackath.org"
+    "url": "https://github.com/mholtom/openhack.js"
   },
   "license": "MIT",
   "scripts": {
