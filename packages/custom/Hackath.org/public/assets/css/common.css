@@ -16,3 +16,20 @@
 .MEAN-Logo {
   	height: 80%
 }
+
+.menu-heading {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+    cursor: default;
+    display: block;
+    line-height: 32px;
+    margin: 0;
+    padding: 8px 0px 0px 16px;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.54);
+}
+

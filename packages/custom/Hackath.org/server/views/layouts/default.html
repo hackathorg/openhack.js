@@ -2,13 +2,14 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml" itemscope="itemscope" itemtype="http://schema.org/Product">
 {% include '../includes/head.html' %}
 
-<body data-ng-controller="StarterController" ng-cloak class="ng-cloak" ng-class="state" layout="column">
-	<div layout="row">
-    <md-sidenav class="md-sidenav-left" md-is-locked-open="true" data-ng-include="'/meanStarter/views/system/header.html'" data-role="navigation"></md-sidenav>
-    <md-content style="min-height: 100%" flex layout-padding>
-    <div data-ng-include="'/admin/views/index.html'"></div>
-    {% block content %}{% endblock %}
-    </md-content>
+<body style="min-height: 100%; height:100%" data-ng-controller="StarterController" ng-cloak class="ng-cloak" ng-class="state" layout="column">
+    <md-toolbar layout="row" data-ng-include="'/meanStarter/views/system/topnav.html'"></md-toolbar>
+    <div layout="row">
+        <md-sidenav class="md-sidenav-left" md-is-locked-open="true" data-ng-include="'/meanStarter/views/system/sidenav.html'" data-role="navigation"></md-sidenav>
+        <md-content flex layout-padding>
+        <div data-ng-include="'/admin/views/index.html'"></div>
+        {% block content %}{% endblock %}
+        </md-content>
     </div>
     <!-- <section class="content">
         <section class="container">
