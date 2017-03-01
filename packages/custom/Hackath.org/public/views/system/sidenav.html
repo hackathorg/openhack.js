@@ -6,22 +6,24 @@
     <a style= "min-width:174px;" ui-sref="home" class="md-button brand">openhack.js</a>
     </md-toolbar> 
   -->
-  <md-button class="md-buttonbrand md-button-side" aria-label="Sign Up" ui-sref="auth.register" ng-if="!hdrctr.hdrvars.authenticated">
-    openhack.js
-  </md-button>
-  <h2 class="menu-heading md-subhead">Module title</h2>
-  <md-button class="md-button md-button-side" aria-label="{{item.link}}" ui-route="/{{item.link}}" ng-class="{active: $uiRoute}" ng-repeat="item in hdrctr.menus.main" ui-sref="{{item.link}}" mean-token="item.link">
-    {{item.title}}<!--<div style="display:inline" ng-if="item.icon"><i style="font-size:14px"class="material-icons">{{item.icon}}</i></div>-->
-  </md-button>
-  <md-divider></md-divider>
-  <md-button class="md-button md-button-side" ui-route="/{{item.link}}" ng-class="{active: $uiRoute}" ui-sref="{{item.link}}" mean-token="item.link">
-    About<!--<div style="display:inline" ng-if="item.icon"><i style="font-size:14px"class="material-icons">{{item.icon}}</i></div>-->
-  </md-button>
-  <span flex></span>
+  <div ng-repeat="item in hdrctr.menus.main"  layout="column">
+    <h2 ng-if="item.submenus.length" class="menu-heading md-subhead">{{item.title}}</h2>
+    <md-button ng-if="!item.submenus.length" class="md-button md-button-side" aria-label="{{item.link}}" ui-route="/{{item.link}}" ng-class="{active: $uiRoute}" ui-sref="{{item.link}}" mean-token="item.link">
+      {{item.title}}<!--<div style="display:inline" ng-if="item.icon"><i style="font-size:14px"class="material-icons">{{item.icon}}</i></div>-->
+    </md-button>
+    <md-button ng-repeat="subitem in item.submenus" class="md-button md-button-side" aria-label="{{subitem.link}}" ui-route="/{{subitem.link}}" ng-class="{active: $uiRoute}" ui-sref="{{subitem.link}}" mean-token="subitem.link">
+      {{subitem.title}}<!--<div style="display:inline" ng-if="item.icon"><i style="font-size:14px"class="material-icons">{{item.icon}}</i></div>-->
+    </md-button>
+  </div>
+  {{hdrctr.menus}}
   <md-button class="md-button md-button-side" aria-label="Sign Up" ui-sref="auth.register" ng-if="!hdrctr.hdrvars.authenticated">
     Join
   </md-button>
   <md-button class="md-button md-button-side" aria-label="Login" ui-sref="auth.login" ng-if="!hdrctr.hdrvars.authenticated">
     Login
+  </md-button>
+  <md-divider></md-divider>
+  <md-button class="md-button md-button-side" ui-route="/{{item.link}}" ng-class="{active: $uiRoute}" ui-sref="{{item.link}}" mean-token="item.link">
+    About<!--<div style="display:inline" ng-if="item.icon"><i style="font-size:14px"class="material-icons">{{item.icon}}</i></div>-->
   </md-button>
 </div>

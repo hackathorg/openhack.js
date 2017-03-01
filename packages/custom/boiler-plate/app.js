@@ -18,12 +18,27 @@ BoilerPlate.register(function(app, auth, database, circles) {
 
   //We are adding a link to the main menu for all authenticated users
   BoilerPlate.menus.add({
-    title: 'boilerPlate',
+    title: 'BoilerPlate',
     link: 'boilerPlate',
+    module: 'boilerplate',
     roles: ['authenticated'],
     menu: 'main'
   });
-  
+
+  BoilerPlate.menus.add({
+    title: 'Modulename',
+    link: 'modulename',
+    roles: ['authenticated'],
+    menu: 'main'
+  });
+
+  BoilerPlate.menus.add({
+    title: 'boilerPlate2',
+    link: 'boilerplate2',
+    roles: ['authenticated'],
+    menu: 'main/modulename'
+  });
+
   /**
     //Uncomment to use. Requires meanio@0.3.7 or above
     // Save settings with callback
