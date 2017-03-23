@@ -1,7 +1,10 @@
 <div class="md-toolbar-tools" ng-controller="HeaderController as hdrctr">
-
+  <md-button hide-lg hide-gt-lg hide-xl md-offset="0 56" style="margin-left:-12px" aria-label="Open phone interactions menu" class="md-icon-button" ng-click="toggleMenu()">
+    <md-tooltip md-direction="right">Menu</md-tooltip>
+    <i class="material-icons">menu</i>
+  </md-button>
   <!-- <img src="/meanStarter/assets/img/hackathorg.png" alt="" class="MEAN-Logo"/>hackath.org -->
- <a style= "min-width:174px;" ui-sref="home" class="md-button brand">openhack.js</a >
+  <a style= "min-width:174px;" ui-sref="home" class="md-button brand">openhack.js</a >
   <!--
     <md-button class="md-buttonbrand" aria-label="Sign Up" ui-sref="auth.register" ng-if="!hdrctr.hdrvars.authenticated">
       hackath.org
