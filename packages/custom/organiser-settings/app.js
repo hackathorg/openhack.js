@@ -5,32 +5,50 @@
  */
 var Module = require('meanio').Module;
 
-var BoilerPlate = new Module('boiler-plate');
+var OrganiserSettings = new Module('organiser-settings');
 
 /*
  * All MEAN packages require registration
  * Dependency injection is used to define required modules
  */
-BoilerPlate.register(function(app, auth, database, circles) {
+OrganiserSettings.register(function(app, auth, database, circles) {
 
   //We enable routing. By default the Package Object is passed to the routes
-  BoilerPlate.routes(app, auth, database, circles);
+  OrganiserSettings.routes(app, auth, database, circles);
 
   //We are adding a link to the main menu for all authenticated users
-  BoilerPlate.menus.add({
-    title: 'BoilerPlate',
-    link: 'boilerPlate',
-    module: 'boilerplate',
+  OrganiserSettings.menus.add({
+    title: 'Admin',
+    link: 'admin',
+    module: 'organiser-settings',
     roles: ['authenticated'],
     menu: 'main',
-    moduleweight: 0
+    moduleweight:999
+  });
+
+  OrganiserSettings.menus.add({
+    title: 'Event status',
+    link: 'eventstatus',
+    module: 'organiser-settings',
+    roles: ['authenticated'],
+    menu: 'main/admin',
+    moduleweight:0
+  });
+
+  OrganiserSettings.menus.add({
+    title: 'Event staging',
+    link: 'eventstaging',
+    module: 'organiser-settings',
+    roles: ['authenticated'],
+    menu: 'main/admin',
+    moduleweight:1
   });
 
   /**
     //Uncomment to use. Requires meanio@0.3.7 or above
     // Save settings with callback
     // Use this for saving data from administration pages
-    BoilerPlate.settings({
+    OrganiserSettings.settings({
         'someSetting': 'some value'
     }, function(err, settings) {
         //you now have the settings object
@@ -38,15 +56,15 @@ BoilerPlate.register(function(app, auth, database, circles) {
 
     // Another save settings example this time with no callback
     // This writes over the last settings.
-    BoilerPlate.settings({
+    OrganiserSettings.settings({
         'anotherSettings': 'some value'
     });
 
     // Get settings. Retrieves latest saved settigns
-    BoilerPlate.settings(function(err, settings) {
+    OrganiserSettings.settings(function(err, settings) {
         //you now have the settings object
     });
     */
 
-  return BoilerPlate;
+  return OrganiserSettings;
 });

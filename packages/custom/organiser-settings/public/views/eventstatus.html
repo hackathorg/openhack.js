@@ -1,0 +1,88 @@
+<div layout="column" flex class="organiserSettings" ng-controller="OrganiserSettingsController">
+  <md-content layout="column" layout-padding flex>
+    <div layout-wrap layout="row" layout-align="space-around start" layout-padding>
+      <div flex-gt-md="50" flex-md="50" flex-xs="100" flex-sm="100">
+        <md-card>
+          <md-card-title>
+            <md-card-title-text style="padding-right:32px">
+              <span class="md-headline">{{event.title}}</span>
+              <p>{{event.description}}</p>
+              <span class="md-subhead">{{event.tags}}</span>
+              <span style="padding-top:20px" ng-if="event.signups" class="md-subhead"><i class="p-icon material-icons">visibility</i> This event is open for signups.</span>
+              <span style="padding-top:20px" ng-if="!event.signups" class="md-subhead"><i class="p-icon material-icons">visibility</i> This event is not open for signups.</span>
+            </md-card-title-text>
+            <md-card-title-media style="margin-top:0px;margin-right:8px;">
+              <div style="background-color:gray;" class="md-media-lg card-media"></div>
+            </md-card-title-media>
+          </md-card-title>
+          <md-divider></md-divider>
+          <md-card-title>
+            <md-card-title-text style="padding-right:32px">
+            <span class="md-headline"> hackath.org integration</span>
+              <span style="color:rgba(0,0,0,0.54);" ng-if="event.hidden" class="md-subhead"><i class="p-icon material-icons">visibility</i> This event is visible on hackath.org.</span>
+              <span style="color:rgba(0,0,0,0.54);" ng-if="!event.hidden" class="md-subhead"><i class="p-icon material-icons">visibility</i> This event is not visible on hackath.org.</span>
+              <p><i class="p-icon material-icons">public</i> <a target="_blank" href="https://hackath.org/hosted/{{event._id}}">View and update event details on hackath.org</a></p>
+            </md-card-title-text>
+          </md-card-title>
+        </md-card>
+      </div>
+      <div layout-wrap layout="row" layout-align="space-around start" flex-gt-md="50" flex-md="50" flex-xs="100" flex-sm="100">
+        <div flex="100">
+          <md-card>
+            <md-card-title>
+              <md-card-title-text layout-wrap layout="row" layout-align="space-around start" style="padding-right:32px">
+                <span flex=100 class="md-headline">Event overview</span>
+                <p flex="100" ng-if="event.status === 'Active'"> This event is currently active and running.</p>
+                <p flex="100" ng-if="event.status === 'Active'"> This means that the event is in progress, and all attendees can access this website, as defined by the organisers in Event staging.</p>
+                <p flex="100" ng-if="event.status === 'Prior'"> This event is not yet active and is in setup.</p>
+                <p flex="100" ng-if="event.status === 'Prior'"> This is the stage before the event happens. This means that not all features are available for attendees, as defined by the organisers in Event staging.</p>
+                <p flex="100" ng-if="event.status === 'Post'"> This event has concluded.</p>
+                <p flex="100" ng-if="event.status === 'Post'"> This is the stage after the event happens. This means that not all features are available for attendees, as defined by the organisers in Event staging. Information about the event will be collected and archived before closure.</p>
+                <span flex=100 class="md-headline">Update event status</span>
+                <md-switch ng-disabled="event.status === 'Post'" style="padding:6px;margin-top: 24px" flex=50 ng-model="event.signups" aria-label="Signups">
+                  Allow signups
+                </md-switch>
+                <md-input-container flex=50 class="md-block">
+                  <md-select ng-model="event.status">
+                    <md-option ng-repeat="status in eventstatus" value="{{status.type}}">
+                      {{status.type}}
+                    </md-option>
+                  </md-select>
+                </md-input-container>
+              </md-card-title-text>
+            </md-card-title>
+              <md-card-actions layout="row" layout-align="end center">
+                <md-button class="md-primary" ng-click="submit()">Update</md-button>
+              </md-card-actions>
+          </md-card>
+
+          <md-card>
+            <md-card-title>
+              <md-card-title-text style="padding-right:32px">
+                <span class="md-headline">Attendee overview</span>
+                <p ng-if="event.maxAttendees > 0">Attendees - {{event.attendees.length}} / {{event.maxAttendees}}</p>
+                <md-progress-linear ng-if="event.maxAttendees > 0" md-mode="determinate" value="{{event.attendees.length / event.maxAttendees}}"></md-progress-linear>
+                <span class="md-subhead"></span>
+                <p style="margin-top: 0px" ng-if="event.maxMentors > 0">Mentors - {{event.mentors.length}} / {{event.maxMentors}}</p>
+                <md-progress-linear ng-if="event.maxMentors > 0" md-mode="determinate" value="{{event.mentors.length / event.maxMentors}}"></md-progress-linear>
+                <!-- these will depend on the event -->
+                <p>Food requirements</p>
+                <ul style="margin:0px">
+                  <li>5 regular</li>
+                  <li>5 vegans</li>
+                  <li>5 vegetarians</li>
+                </ul>
+                <p>T-Shirt requirements</p>
+                <ul style="margin:0px">
+                  <li>10 Unisex medium</li>
+                  <li>10 Female medium</li>
+                </ul>
+                <p><i class="p-icon material-icons">public</i> <a target="_blank" href="https://hackath.org/hosted/{{event._id}}">View and update attendees on hackath.org</a></p>
+              </md-card-title-text>
+            </md-card-title>
+          </md-card>
+        </div>
+      </div>
+    </div>
+  </md-content>
+</div>

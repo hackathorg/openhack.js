@@ -1,0 +1,88 @@
+<div layout="column" flex class="organiserSettings" ng-controller="OrganiserSettingsController">
+  <md-content layout="column" layout-padding flex>
+    <div layout-wrap layout="row" layout-align="space-around start" layout-padding>
+      <div flex-gt-md="33" flex-md="33" flex-xs="100" flex-sm="100">
+        <md-card>
+          <md-card-title>
+            <md-card-title-text style="padding-right:32px">
+              <span class="md-headline">{{user.name}}</span>
+              <span class="md-subhead"><i class="p-icon material-icons">visibility</i> {{user.username}}</span>
+              <p>{{user.bio}}</p>
+              <span class="md-subhead">{{user.tags}}</span>
+            </md-card-title-text>
+          </md-card-title>
+          <md-divider></md-divider>
+          <md-card-content>
+            <p><i class="p-icon material-icons">place</i> Location</p>
+            <p><i class="p-icon material-icons">public</i> Website</p>
+          </md-card-content>
+        </md-card>
+      </div>
+      <div layout-wrap layout="row" layout-align="space-around start" flex-gt-md="66" flex-md="66" flex-xs="100" flex-sm="100">
+        <div style="margin:8px;" flex="100">
+          <md-nav-bar md-selected-nav-item="selectedTab" nav-bar-aria-label="navigation links">
+            <md-nav-item md-nav-click="changeTab('default')" name="default">
+              Overview
+            </md-nav-item>
+            <md-nav-item md-nav-click="changeTab('applications')" name="applications">
+              Event status
+            </md-nav-item>
+            <md-nav-item md-nav-click="changeTab('resume')" name="adv">
+              Resume
+            </md-nav-item>
+          </md-nav-bar>
+        </div>
+
+        <!-- <overview> -->
+
+        <div flex-gt-md="66" flex-md="50" flex-xs="100" flex-sm="100">
+          <md-card ng-if="viewself">
+            <md-card-title style="padding:24px 16px 10px">
+              <md-card-title-text layout-wrap layout="row" layout-align="space-around start">
+                <span flex=66 class="md-title">Your events</span>
+                <md-input-container style="padding:0px;margin:0px" flex=33 class="md-block">
+                  <md-select ng-model="eventtype">
+                    <md-option ng-repeat="type in eventtypes" value="{{type.type}}">
+                      {{type.type}}
+                    </md-option>
+                  </md-select>
+                </md-input-container>
+              </md-card-title-text>
+            </md-card-title>
+            <md-divider></md-divider>
+            <md-list-item class="md-3-line" ng-click="null">
+              <img ng-src="{{application.face}}?{{$index}}" class="md-avatar" alt="{{application.name}}" />
+              <div class="md-list-item-text" layout="column">
+                <h3>WarwickHACK</h3>
+                <h4>Mentor</h4>
+                <p>https://www.warwickhack.com/</p>
+              </div>
+              <div class="md-list-item-text" layout="column">
+                <h4> Date here </h4>
+              </div>
+              <md-button>view</md-button>
+            </md-list-item>          
+          </md-card>
+        </div>
+        <div flex-gt-md="33" flex-md="50" flex-xs="100" flex-sm="100">
+          <md-card>
+            <md-card-title>
+              <md-card-title-text>
+                <span class="md-title">Prizes won</span>
+              </md-card-title-text>
+            </md-card-title>
+            <md-divider></md-divider>
+            <md-list-item class="md-3-line" ng-click="null">
+              <img ng-src="{{application.face}}?{{$index}}" class="md-avatar" alt="{{application.name}}" />
+              <div class="md-list-item-text" layout="column">
+                <h3>WarwickHACK</h3>
+                <h4>Bloomberg API prize</h4>
+                <p>https://www.warwickhack.com/</p>
+              </div>
+            </md-list-item>
+          </md-card>
+        </div>
+      </div>
+    </div>
+  </md-content>
+</div>
