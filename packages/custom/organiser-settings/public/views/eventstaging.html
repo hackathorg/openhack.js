@@ -1,0 +1,54 @@
+<div layout="column" flex class="organiserSettings" ng-controller="OrganiserSettingsController">
+  <md-content layout="column" layout-padding flex>
+    <div layout-wrap layout="row" layout-align="space-around start" layout-padding>
+      <div flex="100" >
+        <md-card>
+          <md-card-title>
+            <md-card-title-text style="padding-right:32px">
+              <span class="md-headline">Before the event</span>
+            </md-card-title-text>
+          </md-card-title>
+          <md-divider></md-divider>
+            <div style="padding:0 16px" ng-if="menu.submenus.length > 0 " ng-repeat="menu in menus.main">
+              <h4>{{menu.title}} module</h4>
+              <div style="padding:0 16px" layout-wrap layout="row" layout-align="space-around start" flex ng-repeat="submenu in menu.submenus">
+                <div class="md-list-item-text" flex-md=40 flex-gt-md=40 flex-xs="100" flex-sm="100">
+                  <h4>{{submenu.title}}</h4>
+                </div>
+                <div style="padding-top:18px" flex=15 flex-xs="100" flex-sm="50">
+                  <md-checkbox ng-model="topping.wanted"> Attendee</md-checkbox>
+                </div>
+                <div style="padding-top:18px" flex=15 flex-xs="100" flex-sm="50">
+                  <md-checkbox ng-model="topping.wanted"> Organiser</md-checkbox>
+                </div>
+                <div style="padding-top:18px" flex=15 flex-xs="100" flex-sm="50">
+                  <md-checkbox ng-model="topping.wanted"> Mentor</md-checkbox>
+                </div>
+                <div style="padding-top:18px" flex=15 flex-xs="100" flex-sm="50">
+                  <md-checkbox ng-model="topping.wanted"> Sponsor</md-checkbox>
+                </div>
+              </div>
+            </div>
+          <md-divider></md-divider>
+          <md-card-title>
+            <md-card-title-text style="padding-right:32px">
+            <span class="md-headline"> During the event</span>
+              <span style="color:rgba(0,0,0,0.54);" ng-if="event.hidden" class="md-subhead"><i class="p-icon material-icons">visibility</i> This event is visible on hackath.org.</span>
+              <span style="color:rgba(0,0,0,0.54);" ng-if="!event.hidden" class="md-subhead"><i class="p-icon material-icons">visibility</i> This event is not visible on hackath.org.</span>
+              <p><i class="p-icon material-icons">public</i> <a target="_blank" href="https://hackath.org/hosted/{{event._id}}">View and update event details on hackath.org</a></p>
+            </md-card-title-text>
+          </md-card-title>
+          <md-divider></md-divider>
+          <md-card-title>
+            <md-card-title-text style="padding-right:32px">
+            <span class="md-headline"> After the event</span>
+              <span style="color:rgba(0,0,0,0.54);" ng-if="event.hidden" class="md-subhead"><i class="p-icon material-icons">visibility</i> This event is visible on hackath.org.</span>
+              <span style="color:rgba(0,0,0,0.54);" ng-if="!event.hidden" class="md-subhead"><i class="p-icon material-icons">visibility</i> This event is not visible on hackath.org.</span>
+              <p><i class="p-icon material-icons">public</i> <a target="_blank" href="https://hackath.org/hosted/{{event._id}}">View and update event details on hackath.org</a></p>
+            </md-card-title-text>
+          </md-card-title>
+        </md-card>
+      </div>
+    </div>
+  </md-content>
+</div>

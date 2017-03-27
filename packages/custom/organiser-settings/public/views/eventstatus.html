@@ -60,13 +60,13 @@
             <md-card-title>
               <md-card-title-text style="padding-right:32px">
                 <span class="md-headline">Attendee overview</span>
-                <p ng-if="event.maxAttendees > 0">Attendees - {{event.attendees.length}} / {{event.maxAttendees}}</p>
-                <md-progress-linear ng-if="event.maxAttendees > 0" md-mode="determinate" value="{{event.attendees.length / event.maxAttendees}}"></md-progress-linear>
+                <p style="margin-bottom:4px" ng-if="event.maxAttendees > 0">Attendees - {{event.attendees.length}} / {{event.maxAttendees}}</p>
+                <!--<md-progress-linear ng-if="event.maxAttendees > 0" md-mode="determinate" value="{{event.attendees.length / event.maxAttendees}}"></md-progress-linear>-->
                 <span class="md-subhead"></span>
                 <p style="margin-top: 0px" ng-if="event.maxMentors > 0">Mentors - {{event.mentors.length}} / {{event.maxMentors}}</p>
-                <md-progress-linear ng-if="event.maxMentors > 0" md-mode="determinate" value="{{event.mentors.length / event.maxMentors}}"></md-progress-linear>
+                <!--<md-progress-linear ng-if="event.maxMentors > 0" md-mode="determinate" value="{{event.mentors.length / event.maxMentors}}"></md-progress-linear>-->
                 <!-- these will depend on the event -->
-                <p>Food requirements</p>
+                <span>Food requirements</span>
                 <ul style="margin:0px">
                   <li>5 regular</li>
                   <li>5 vegans</li>

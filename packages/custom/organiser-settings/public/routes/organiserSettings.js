@@ -7,7 +7,7 @@
             templateUrl: 'organiser-settings/views/eventstatus.html'
         }).state('eventstaging', {
             url: '/admin/staging',
-            templateUrl: 'organiser-settings/views/index.html'
+            templateUrl: 'organiser-settings/views/eventstaging.html'
         });
     }
 
