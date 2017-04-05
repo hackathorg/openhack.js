@@ -1,115 +1,89 @@
 <div layout="column" flex data-ng-controller="IndexController">
   <md-content layout="column" layout-padding flex>
-   <div layout="row" style="min-height: 500px;" layout-align="space-around start" layout-padding layout-wrap flex>
-      <md-card layout="row" layout-align="space-around center" layout-padding layout-wrap flex flex-gt-md="66" flex-xs="100" flex-md="100" flex-sm="100">
-      <div flex ="66" flex-xs="100" flex-md="100" flex-sm="100">
-        <p hide-sm hide-xs style="text-align:center" class="md-display-4">
-          hackath.org
-        </p>
-        <p show-sm show-xs hide-gt-sm style="text-align:center" class="md-display-3">
-          hackath.org
-        </p>
-        <p style="text-align:center" class="md-headline">
-          The Open-source Hackathon platform
-        </p>
-      </div>
-      <div hide-md hide-sm hide-xs flex="33">
-        <md-card style="min-width:320px;">
-        <span style="text-align:center;padding:10px" class="md-headline">Featured Hackathon!</span>
-          <img ng-src="/meanStarter/assets/img/placeholder.png" class="md-card-image" alt="user avatar">
-            <md-card-title>
-              <md-card-title-text>
-                <span class="md-headline">WarwickHACK - WarwickTECH</span>
-                <span class="md-subhead">Location : University of Warwick</span>
-                <span class="md-subhead">WarwickHACK is a hackathon event where programmers, entrepreneurs, designers and developers come together to build, make and create. The event is a classic hackathon, where you have 24 hours to go crazy with your ideas!</span>
-                <span style="padding-bottom:10px" class="md-subhead">50/200 tickets remaining</span>
-                <md-progress-linear md-mode="determinate" value="75"></md-progress-linear>
-              </md-card-title-text>
-            </md-card-title>
-            <md-card-actions layout="row" layout-align="end center">
-              <md-button ng-href="{{site.link}}" target="_blank">Check it out!</md-button>
-            </md-card-actions>
+    <div flex="100" layout-wrap layout="row" layout-align="space-around start" layout-padding>
+      <div flex-gt-md="66" flex-md="66" flex-xs="100" flex-sm="100" flex="66">
+        <md-card>
+          <md-card-title>
+            <md-card-title-text>
+              <p hide-xs hide-sm style="margin-top: 16px;margin-bottom: 8px" class="md-display-3">{{site.event.name}}</p>
+              <p hide-gt-sm style="margin-top: 16px;margin-bottom: 8px" class="md-display-2">{{site.event.name}}</p>
+              <p hide-gt-sm style="margin-top: 0px;margin-bottom: 16px" class="md-subhead">{{site.event.location}} - {{site.event.date}}</p>
+              <p style="margin-top: 0px;margin-bottom: 0px" class="md-subhead">{{site.event.description}}</p>
+              <p class="md-title">Only 10 tickets remaining!</p>
+            </md-card-title-text>
+            <p hide-xs hide-sm style="margin-top: 32px;margin-bottom: 0px" align="right" class="md-title">{{site.event.location}} - {{site.event.date}}</p>
+          </md-card-title>
         </md-card>
-        </div>
-      </md-card>
-<!--     <md-fab-toolbar md-open="false" count="0" md-direction="right">
-      <md-fab-trigger class="align-with-text">
-        <md-button aria-label="menu" class="md-fab md-primary">
-          <md-tooltip>community</md-tooltip>
-          <md-icon>group</md-icon>
-        </md-button>
-      </md-fab-trigger>
-      <md-toolbar>
-        <md-fab-actions class="md-toolbar-tools">
-          <md-button aria-label="facebook" class="md-button" ng-href="https://facebook.com/groups/mean.io/" target="_blank">
-            <md-icon>face</md-icon>
-            Facebook
-          </md-button>
-          <md-button aria-label="github" class="md-button" ng-href="https://github.com/linnovate/mean/" target="_blank">
-            <md-icon>code</md-icon>
-            GitHub
-          </md-button>
-          <md-button aria-label="gitter" class="md-button" ng-href="https://gitter.im/linnovate/mean/" target="_blank">
-            <md-icon>textsms</md-icon>
-            Gitter
-          </md-button>
-          <md-button aria-label="hangout" class="md-button" ng-href="https://hangout.mean.io/" target="_blank">
-            <md-icon>voice_chat</md-icon>
-            Hangout
-          </md-button>
-        </md-fab-actions>
-      </md-toolbar>
-    </md-fab-toolbar> -->
-      <div flex-gt-md="66" flex-xs="100" flex-md="100" flex-sm="100">
-          <p show-sm show-xs hide-gt-sm class="md-headline">About us</p>
-          <p class="md-title">
-            <a class="brand">hackath.org</a> is a Hackathon platform built for hackers. 
-          </p>
-          <p>
-            A LONG paragraph here explaining the overall goal of hackath.org and why you would use it. + some examples
-          </p>
-          <p>
-            Insert numbers pulled from Mongo here. Some cool information, number of attendees, hackathons hosted etc
-          </p>
+        <md-card>
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-title">About this event</span>
+            </md-card-title-text>
+          </md-card-title>
+          <md-divider></md-divider>
+          <md-card-content>
+              <p style="margin-top: 0px;margin-bottom: 0px" class="md-subhead">{{site.about.description}}</p>
+              <p style="margin-top: 16px;margin-bottom: 0px" class="md-subhead">This event is open for attendees, mentors and sponsorship.</p>
+              <p style="margin-top: 16px;margin-bottom: 8px" class="md-subhead">Interested in applying?</p>
+              <md-button class="md-primary md-raised">Apply here</md-button>
+          </md-card-content>
+        </md-card>
       </div>
-      <div flex="33" flex-xs="100" flex-md="100" flex-sm="100">
-
-          <p show-sm show-xs hide-gt-sm class="md-headline">Features</p>
-          <p class="md-title">
-            Unifying the hackathon experience
-          </p>
-          <p>
-            We've developed hackath.org as a base for all types of Hackathon attendee, whether you are a sponsor, a host or an attendee. 
-            We offer all the tools you need to discover, design and attend events across the country. 
-          </p>
-          <p class="md-title">
-            One click Hackathon hosting
-          </p>
-          <p>
-            Primarily, hackath.org allows users to deploy a fully customisable hackathon framework in one click, allowing anyone to 
-            design and create their own Hackathon event. Once deployed, organisers can tailor the event to their own needs, using our 
-            unique modular framework design.
-          </p>
-          <p>
-            Check out our <a href="http://github.com">demo</a>!
-          </p>
-          <p class="md-title">
-            Unique Hackathon profiling
-          </p>          
-          <p>
-            Once you've set up your hackath.org account, we can customise the hackathon experience for your individual needs. This ranges from
-            team builders at individual hackathon events, to a leaderboard of the best and brightest hackers on our site!
-          </p>
-          <p class="md-title">
-            Open-Source development
-          </p>
-          <p>
-            Our entire development is Open-Source! We know hackers love to tinker, and for advanced users, the entire development stack is
-            available to work with! You can even host the service as a stand-alone and find your own hosting solutions!
-          </p>
-          <p>
-            Check it out on <a href="http://github.com">GitHub</a>!
-          </p>
+      <div flex="33" hide-xs hide-sm>
+        <md-card>
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-title">Organising team - WarwickTECH</span>
+            </md-card-title-text>
+          </md-card-title>
+          <md-divider></md-divider>
+          <md-list-item class="noright" aria-label="/profile/{{person.id}}" ui-sref="profile username({username: person.id})" mean-token="person.id">
+            <img alt="{{ person.name }}" ng-src="{{ person.img }}" class="md-avatar" />
+            <p> exampleuser2017</p>
+          </md-list-item>
+          <md-list-item class="noright" aria-label="/profile/{{person.id}}" ui-sref="profile username({username: person.id})" mean-token="person.id">
+            <img alt="{{ person.name }}" ng-src="{{ person.img }}" class="md-avatar" />
+            <p> exampleuser2017</p>
+          </md-list-item>
+          <md-list-item class="noright" aria-label="/profile/{{person.id}}" ui-sref="profile username({username: person.id})" mean-token="person.id">
+            <img alt="{{ person.name }}" ng-src="{{ person.img }}" class="md-avatar" />
+            <p> exampleuser2017</p>
+          </md-list-item>
+        </md-card>
+      </div>
+      <div ng-repeat="section in site.info.sections" flex-gt-md="33" flex-md="33" flex-xs="100" flex-sm="100">
+        <md-card>
+          <md-card-title>
+            <md-card-title-text>
+              <p style="margin-top: 16px;margin-bottom: 8px" align="center" class="md-display-1">{{section.title}}</p>
+              <p style="margin-top: 0px;margin-bottom: 16px" align="center" class="md-subhead">{{section.description}}</p>
+            </md-card-title-text>
+          </md-card-title>
+        </md-card>
+      </div>
+      <div flex=100>
+        <md-card>
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-title">Frequently asked questions</span>
+            </md-card-title-text>
+          </md-card-title>
+          <md-divider></md-divider>
+          <md-list-item ng-repeat="faq in site.faq" style="padding:10px" class="noright">
+            <span flex=30 style="font-weight:bold">{{faq.question}}</span>
+            <span flex=70>{{faq.answer}}</span>
+          </md-list-item>
+        </md-card>
+      </div>
+      <div flex=100>
+        <md-card>
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-title">Privacy policy</span>
+            </md-card-title-text>
+          </md-card-title>
+          <md-divider></md-divider>
+        </md-card>
       </div>
     </div>
   </md-content>
