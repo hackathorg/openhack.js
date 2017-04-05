@@ -37,6 +37,6 @@
         .module('mean.openhack-packages')
         .factory('OpenhackPackages', OpenhackPackages);
 
-    OpenhackPackages.$inject = ['$http', '$q'];
+    OpenhackPackages.$inject = ['$http', '$q', '$resource'];
 
 })();
