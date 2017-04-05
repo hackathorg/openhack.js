@@ -1,9 +1,24 @@
 (function() {
     'use strict';
 
-    function OpenhackPackages($http, $q) {
+    function OpenhackPackages($http, $q, $resource) {
         return {
             name: 'openhack-packages',
+            packages: $resource('api/openhackSettings/:name', {
+                name: '@name'
+                }, {
+                update: {
+                    method: 'PUT'
+                },
+                show: {
+                    method: 'GET'
+                },
+                all: {
+                    method: 'GET',
+                    isArray: true,
+                    url: 'api/openhackSettings'
+                }
+            }),
             checkCircle: function(circle) {
                 var deferred = $q.defer();
 

@@ -3,7 +3,6 @@
 var mongoose = require('mongoose'),
 Package = mongoose.model('Settings');
 
-
 module.exports = function(OpenhackPackages){
   return {
     getpackages: function(req, res) {

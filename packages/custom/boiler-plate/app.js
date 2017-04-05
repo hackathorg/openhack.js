@@ -26,22 +26,22 @@ BoilerPlate.register(function(app, auth, database, circles) {
     menu: 'main',
     moduleweight: 0
   });
-  BoilerPlate.menus.add({
-    title: 'Location',
-    link: 'location',
-    module: 'boilerplate',
-    roles: ['authenticated'],
-    menu: 'main',
-    moduleweight: 1
-  });
-  BoilerPlate.menus.add({
-    title: 'Attendees',
-    link: 'attendees',
-    module: 'boilerplate',
-    roles: ['authenticated'],
-    menu: 'main',
-    moduleweight: 2
-  });
+  // BoilerPlate.menus.add({
+  //   title: 'Location',
+  //   link: 'location',
+  //   module: 'boilerplate',
+  //   roles: ['authenticated'],
+  //   menu: 'main',
+  //   moduleweight: 1
+  // });
+  // BoilerPlate.menus.add({
+  //   title: 'Attendees',
+  //   link: 'attendees',
+  //   module: 'boilerplate',
+  //   roles: ['authenticated'],
+  //   menu: 'main',
+  //   moduleweight: 2
+  // });
 
 
   /**
