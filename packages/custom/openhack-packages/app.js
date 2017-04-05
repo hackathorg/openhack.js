@@ -12,7 +12,7 @@ var OpenhackPackages = new Module('openhack-packages');
  * Dependency injection is used to define required modules
  */
 OpenhackPackages.register(function(app, auth, database, circles) {
-
+  OpenhackPackages.controller = require('./server/controllers/openhackPackages') (OpenhackPackages);
   //We enable routing. By default the Package Object is passed to the routes
   OpenhackPackages.routes(app, auth, database, circles);
 

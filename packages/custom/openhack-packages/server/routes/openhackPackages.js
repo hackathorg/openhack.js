@@ -7,6 +7,16 @@
 
         var requiresAdmin = circles.controller.hasCircle('admin');
         var requiresLogin = circles.controller.hasCircle('authenticated');
+        var requiresOrganiser = circles.controller.hasCircle('organiser');
+        var requiresMentor = circles.controller.hasCircle('mentor');
+        var requiresAttendee = circles.controller.hasCircle('attendee');
+
+        var packages = OpenhackSettings.controller;
+
+        app.route('/api/openhackSettings/:packageName')
+            .get(packages.getpackage)
+            .put(packages.setpackage);
+        app.get('/api/openhackSettings', packages.getpackages);
 
         app.get('/api/openhackSettings/example/anyone', function(req, res) {
             res.send('Anyone can access this');
