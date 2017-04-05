@@ -7,6 +7,10 @@
 
         var requiresAdmin = circles.controller.hasCircle('admin');
         var requiresLogin = circles.controller.hasCircle('authenticated');
+        
+        var requiresOrganiser = circles.controller.hasCircle('organiser');
+        var requiresMentor = circles.controller.hasCircle('mentor');
+        var requiresAttendee = circles.controller.hasCircle('attending');
 
         app.get('/api/example/example/anyone', function(req, res) {
             res.send('Anyone can access this');

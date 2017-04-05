@@ -1,0 +1,36 @@
+<div layout="column" flex class="example-example" ng-controller="ExampleController">
+  	<md-content layout="column" layout-padding flex>
+    	<div layout-wrap layout="row" layout-align="space-around start" layout-padding>
+			<div flex="100" >
+				<md-card>
+					<md-card-title>
+						<md-card-title-text style="padding-right:32px">
+							<span class="md-headline">Before the event</span>
+						</md-card-title-text>
+					</md-card-title>
+					<md-divider></md-divider>
+					<div style="padding:0 16px">
+						<h4>{{menu.title}} module</h4>
+						<div style="padding:0 16px" layout-wrap layout="row" layout-align="space-around start" flex>
+							<div class="md-list-item-text" flex-md=100 flex-gt-md=100 flex-xs="100" flex-sm="100">
+								<h4>Title</h4>
+							</div>
+							<div style="padding-top:18px" flex=15 flex-xs="100" flex-sm="50">
+								<md-checkbox ng-model="topping.wanted"> Attendee</md-checkbox>
+							</div>
+							<div style="padding-top:18px" flex=15 flex-xs="100" flex-sm="50">
+								<md-checkbox ng-model="topping.wanted"> Organiser</md-checkbox>
+							</div>
+							<div style="padding-top:18px" flex=15 flex-xs="100" flex-sm="50">
+								<md-checkbox ng-model="topping.wanted"> Mentor</md-checkbox>
+							</div>
+							<div style="padding-top:18px" flex=15 flex-xs="100" flex-sm="50">
+								<md-checkbox ng-model="topping.wanted"> Sponsor</md-checkbox>
+							</div>
+						</div>
+					</div>
+				</md-card>
+      		</div>
+    	</div>
+ 	</md-content>
+</div>

@@ -7,7 +7,7 @@
             templateUrl: 'example/views/index.html'
         }).state('example settings', {
             url: '/example/settings',
-            templateUrl: 'example/views/index.html'
+            templateUrl: 'example/views/settings.html'
         });
     }
 

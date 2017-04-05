@@ -1,6 +1,90 @@
 <div layout="column" flex data-ng-controller="IndexController">
   <md-content layout="column" layout-padding flex>
-    <div layout="row" style="height: 100%;" layout-align="space-around start" layout-padding layout-wrap flex>
+    <div flex="100" layout-wrap layout="row" layout-align="space-around start" layout-padding>
+      <div flex-gt-md="66" flex-md="66" flex-xs="100" flex-sm="100" flex="66">
+        <md-card>
+          <md-card-title>
+            <md-card-title-text>
+              <p hide-xs hide-sm style="margin-top: 16px;margin-bottom: 8px" class="md-display-3">{{site.event.name}}</p>
+              <p hide-gt-sm style="margin-top: 16px;margin-bottom: 8px" class="md-display-2">{{site.event.name}}</p>
+              <p hide-gt-sm style="margin-top: 0px;margin-bottom: 16px" class="md-subhead">{{site.event.location}} - {{site.event.date}}</p>
+              <p style="margin-top: 0px;margin-bottom: 0px" class="md-subhead">{{site.event.description}}</p>
+              <p class="md-title">Only 10 tickets remaining!</p>
+            </md-card-title-text>
+            <p hide-xs hide-sm style="margin-top: 32px;margin-bottom: 0px" align="right" class="md-title">{{site.event.location}} - {{site.event.date}}</p>
+          </md-card-title>
+        </md-card>
+        <md-card>
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-title">About this event</span>
+            </md-card-title-text>
+          </md-card-title>
+          <md-divider></md-divider>
+          <md-card-content>
+              <p style="margin-top: 0px;margin-bottom: 0px" class="md-subhead">{{site.about.description}}</p>
+              <p style="margin-top: 16px;margin-bottom: 0px" class="md-subhead">This event is open for attendees, mentors and sponsorship.</p>
+              <p style="margin-top: 16px;margin-bottom: 8px" class="md-subhead">Interested in applying?</p>
+              <md-button class="md-primary md-raised">Apply here</md-button>
+          </md-card-content>
+        </md-card>
+      </div>
+      <div flex="33" hide-xs hide-sm>
+        <md-card>
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-title">Organising team - WarwickTECH</span>
+            </md-card-title-text>
+          </md-card-title>
+          <md-divider></md-divider>
+          <md-list-item class="noright" aria-label="/profile/{{person.id}}" ui-sref="profile username({username: person.id})" mean-token="person.id">
+            <img alt="{{ person.name }}" ng-src="{{ person.img }}" class="md-avatar" />
+            <p> exampleuser2017</p>
+          </md-list-item>
+          <md-list-item class="noright" aria-label="/profile/{{person.id}}" ui-sref="profile username({username: person.id})" mean-token="person.id">
+            <img alt="{{ person.name }}" ng-src="{{ person.img }}" class="md-avatar" />
+            <p> exampleuser2017</p>
+          </md-list-item>
+          <md-list-item class="noright" aria-label="/profile/{{person.id}}" ui-sref="profile username({username: person.id})" mean-token="person.id">
+            <img alt="{{ person.name }}" ng-src="{{ person.img }}" class="md-avatar" />
+            <p> exampleuser2017</p>
+          </md-list-item>
+        </md-card>
+      </div>
+      <div ng-repeat="section in site.info.sections" flex-gt-md="33" flex-md="33" flex-xs="100" flex-sm="100">
+        <md-card>
+          <md-card-title>
+            <md-card-title-text>
+              <p style="margin-top: 16px;margin-bottom: 8px" align="center" class="md-display-1">{{section.title}}</p>
+              <p style="margin-top: 0px;margin-bottom: 16px" align="center" class="md-subhead">{{section.description}}</p>
+            </md-card-title-text>
+          </md-card-title>
+        </md-card>
+      </div>
+      <div flex=100>
+        <md-card>
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-title">Frequently asked questions</span>
+            </md-card-title-text>
+          </md-card-title>
+          <md-divider></md-divider>
+          <md-list-item ng-repeat="faq in site.faq" style="padding:10px" class="noright">
+            <span flex=30 style="font-weight:bold">{{faq.question}}</span>
+            <span flex=70>{{faq.answer}}</span>
+          </md-list-item>
+        </md-card>
+      </div>
+      <div flex=100>
+        <md-card>
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-title">Privacy policy</span>
+            </md-card-title-text>
+          </md-card-title>
+          <md-divider></md-divider>
+        </md-card>
+      </div>
     </div>
   </md-content>
 </div>
