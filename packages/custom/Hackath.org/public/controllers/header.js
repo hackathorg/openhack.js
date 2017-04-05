@@ -1,9 +1,8 @@
 'use strict';
 
-angular.module('mean.system').controller('HeaderController', ['$scope', '$rootScope', 'Menus', 'MeanUser', '$state',
-  function ($scope, $rootScope, Menus, MeanUser, $state) {
+angular.module('mean.system').controller('HeaderController', ['$scope', '$rootScope', 'Menus', 'MeanUser', '$state', '$mdSidenav',
+  function ($scope, $rootScope, Menus, MeanUser, $state, $mdSidenav) {
     var vm = this;
-
     vm.menus = {};
     vm.hdrvars = {
       authenticated: MeanUser.loggedin,
@@ -22,6 +21,10 @@ angular.module('mean.system').controller('HeaderController', ['$scope', '$rootSc
       }, function (menu) {
         vm.menus[name] = menu
       });
+    }
+
+    $scope.toggleMenu = function (){
+      $mdSidenav('left').toggle();
     }
 
     // Query server for menus and check permissions
