@@ -1,0 +1,24 @@
+<div class="openhackPackages-example" ng-controller="OpenhackPackagesController">
+  <h1>Example view from your new awesome package</h1>
+  <h2>Package: <span>{{package.name}}</span></h2>
+  <ol>
+    <li>
+      <a ui-sref="openhackPackages circles example({circle:'anyone'})">Server route that anyone can access</a>
+    </li>
+    <li>
+      <a ui-sref="openhackPackages circles example({circle:'auth'})">Server route that requires authentication</a>
+    </li>
+    <li>
+      <a ui-sref="openhackPackages circles example({circle:'admin'})">Server route that requires admin user</a>
+    </li>
+    <li>
+      <a href="/api/openhackPackages/example/render" target="_self">Raw Html rendering example from using swig</a>
+    </li>
+  </ol>
+  <h3><img src="/openhack-packages/assets/img/logo.png" /></h3>
+  </br>
+  <p class="alert alert-info">You can find your package in /packages/openhack-packages</p>
+  </br>
+  <h3><a href="http://learn.mean.io">Documentation</a></h3>
+  </br>
+</div>
