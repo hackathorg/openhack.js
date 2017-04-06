@@ -41,6 +41,20 @@ Example.register(function(app, auth, database, circles) {
     moduleweight: 1
   });
 
+
+  // Package.Update({
+  //   packageName: 'Example'
+  // }, {
+  //   $setOnInsert: defaultSettings
+  // }, {
+  //   upsert: true
+  // }, function (err, circle) {
+  //   if (err) {
+  //     console.error("Error setting default settings")
+  //   }
+  //   console.error("Default settings loaded")
+  // });
+
   /**
     //Uncomment to use. Requires meanio@0.3.7 or above
     // Save settings with callback

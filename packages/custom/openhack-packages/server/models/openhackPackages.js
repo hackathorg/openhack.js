@@ -7,7 +7,7 @@ var settingsSchema = new Schema({
   packageName:{type: String, index: true},
   settings: [{
       key: String,
-      value: String,
+      value: {},
       admin: Boolean
   }]
 });

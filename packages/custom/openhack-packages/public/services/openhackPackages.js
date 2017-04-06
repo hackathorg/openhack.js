@@ -4,8 +4,8 @@
     function OpenhackPackages($http, $q, $resource) {
         return {
             name: 'openhack-packages',
-            packages: $resource('api/openhackSettings/:name', {
-                name: '@name'
+            packages: $resource('api/openhackSettings/:packageName', {
+                packageName: '@packageName'
                 }, {
                 update: {
                     method: 'PUT'

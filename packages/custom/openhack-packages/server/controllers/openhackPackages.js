@@ -15,21 +15,22 @@ module.exports = function(OpenhackPackages){
       Package.findOne({
         packageName: req.params.packageName
       }).exec(function (err, thispackage) {
-        if (!err && thispackage) {
-          Event.findOneAndUpdate({
-            packageName: thispackage.packageName
-          }, {
-            $set: req.body
-          }, {
-            multi: false,
-            upsert: false
-          }, function (err, circle) {
-            if (err) {
-              return res.send(500, err.message);
-            }
-            res.send(200, 'updated');
-          });
+        if (err) {
+          return res.send(500, err.message);
         }
+        Package.findOneAndUpdate({
+          packageName: req.params.packageName
+        }, {
+          $set: req.body
+        }, {
+          multi: false,
+          upsert: true
+        }, function (err, circle) {
+          if (err) {
+            return res.send(500, err.message);
+          }
+          res.send(200, 'updated');
+        });
       });    
     },
     getpackage: function (req, res) {
@@ -37,18 +38,13 @@ module.exports = function(OpenhackPackages){
       Package.findOne({
         packageName: req.params.packageName
       }).exec(function (err,thispackage) {
+        if (err) {
+          return res.send(500, err.message);
+        }
         if (!err && thispackage) {
           res.send(200,thispackage);
         }
       });
     }
-    /*, 
-    get: function (req, res) {
-      if (!req.params.packageName) return res.send(404, 'No package specified');
-      if (!req.params.settingName) return res.send(404, 'No setting specified');
-      Follow.update({userId: {$in:[req.profile._id, req.user._id]}}, {$pull:{follows:{id: req.profile._id}, followers:{id: req.user._id }}},{new: true, multi:true}, function(err, num){
-        res.send(num);
-      })
-    }*/
   };
 };

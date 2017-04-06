@@ -10,9 +10,10 @@
         };
         $scope.testsettting = {packageName:"Test", settings:[{key:"Main", value:"Organisers", admin:false}]};
 
-        // $scope.packagesettings = new OpenhackPackages.packages();
-        // OpenhackPackages.packages.update({name:"Test"}, $scope.testsettting);
-        // $scope.result = OpenhackPackages.packages.show({name:"Test"});
+        $scope.packagesettings = new OpenhackPackages.packages();
+        OpenhackPackages.packages.update({packageName:"Test"}, $scope.testsettting);
+        $scope.result = OpenhackPackages.packages.show({packageName:"Test"});
+        $scope.allsettings = OpenhackPackages.packages.all();
 
         $scope.checkCircle = function() {
             OpenhackPackages.checkCircle($stateParams.circle).then(function(response) {
