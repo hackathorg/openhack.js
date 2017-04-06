@@ -35,15 +35,6 @@ OrganiserSettings.register(function(app, auth, database, circles) {
     moduleweight:0
   });
 
-  OrganiserSettings.menus.add({
-    title: 'Event staging',
-    link: 'eventstaging',
-    module: 'organiser-settings',
-    roles: ['authenticated'],
-    menu: 'main/admin',
-    moduleweight:1
-  });
-
   /**
     //Uncomment to use. Requires meanio@0.3.7 or above
     // Save settings with callback

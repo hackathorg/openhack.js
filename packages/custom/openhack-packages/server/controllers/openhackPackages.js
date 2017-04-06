@@ -5,8 +5,13 @@ Package = mongoose.model('Settings');
 
 module.exports = function(OpenhackPackages){
   return {
-    getpackages: function(req, res) {
+    getpackagenames: function(req, res) {
       Package.find({}).select('packageName').exec(function (err, packages) {
+        res.send(packages);
+      });
+    },
+    getpackages: function(req, res) {
+      Package.find({}).exec(function (err, packages) {
         res.send(packages);
       });
     },

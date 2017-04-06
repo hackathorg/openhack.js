@@ -9,10 +9,12 @@
   <div ng-repeat="item in hdrctr.menus.main |  orderBy : 'moduleweight'"  layout="column">
     <h2 ng-if="item.submenus.length" class="menu-heading md-subhead">{{item.title}}</h2>
     <md-button ng-if="!item.submenus.length" class="md-button md-button-side" aria-label="{{item.link}}" ui-route="/{{item.link}}" ng-class="{active: $uiRoute}" ui-sref="{{item.link}}" mean-token="item.link">
+
       {{item.title}}<!--<div style="display:inline" ng-if="item.icon"><i style="font-size:14px"class="material-icons">{{item.icon}}</i></div>-->
     </md-button>
     <md-button ng-repeat="subitem in item.submenus | orderBy : 'moduleweight'" class="md-button md-button-side" aria-label="{{subitem.link}}" ui-route="/{{subitem.link}}" ng-class="{active: $uiRoute}" ui-sref="{{subitem.link}}" mean-token="subitem.link">
-      {{subitem.title}}<!--<div style="display:inline" ng-if="item.icon"><i style="font-size:14px"class="material-icons">{{item.icon}}</i></div>-->
+      {{subitem.title}}
+      <!--<div style="display:inline" ng-if="item.icon"><i style="font-size:14px"class="material-icons">{{item.icon}}</i></div>-->
     </md-button>
   </div>
   <md-button class="md-button md-button-side" aria-label="Sign Up" ui-sref="auth.register" ng-if="!hdrctr.hdrvars.authenticated">
@@ -24,5 +26,6 @@
   <md-divider></md-divider>
   <md-button class="md-button md-button-side" ui-route="/{{item.link}}" ng-class="{active: $uiRoute}" ui-sref="{{item.link}}" mean-token="item.link">
     About<!--<div style="display:inline" ng-if="item.icon"><i style="font-size:14px"class="material-icons">{{item.icon}}</i></div>-->
+    {{registeredPackages}}
   </md-button>
 </div>

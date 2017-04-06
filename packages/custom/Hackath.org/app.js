@@ -15,6 +15,8 @@ MeanStarter.register(function (app, users, system) {
   // Set views path, template engine and default layout
   app.set('views', path.join(__dirname, '/server/views'))
 
+  // TO DO: Add here default event settings to the package settings
+
   MeanStarter.angularDependencies(['mean.system', 'mean.users'])
 
   return MeanStarter

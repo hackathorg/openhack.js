@@ -20,6 +20,7 @@ Example.register(function(app, auth, database, circles) {
   Example.menus.add({
     title: 'Example module',
     link: 'example',
+    module: 'example',
     roles: ['authenticated'],
     menu: 'main',
     moduleweight: 100
@@ -28,6 +29,7 @@ Example.register(function(app, auth, database, circles) {
   Example.menus.add({
     title: 'Functionality',
     link: 'example functionality',
+    module: 'example',
     roles: ['authenticated'],
     menu: 'main/example',
     moduleweight: 0
@@ -36,6 +38,7 @@ Example.register(function(app, auth, database, circles) {
   Example.menus.add({
     title: 'Settings',
     link: 'example settings',
+    module: 'example',
     roles: ['authenticated'],
     menu: 'main/example',
     moduleweight: 1

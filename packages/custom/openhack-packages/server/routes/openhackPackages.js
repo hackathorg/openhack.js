@@ -17,6 +17,7 @@
             .get(packages.getpackage)
             .put(packages.setpackage);
         app.get('/api/openhackSettings', packages.getpackages);
+        app.get('/api/openhackPackagenames', packages.getpackagenames);
 
         app.get('/api/openhackSettings/example/anyone', function(req, res) {
             res.send('Anyone can access this');
