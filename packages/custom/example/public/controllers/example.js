@@ -3,11 +3,45 @@
 
     /* jshint -W098 */
 
-    function ExampleController($scope, Global, Example, $stateParams) {
+    function ExampleController($scope, Global, Example, $stateParams, Menus) {
         $scope.global = Global;
         $scope.package = {
             name: 'example'
         };
+
+        $scope.modulemenus = [];
+        $scope.menu_settings = {}
+
+        function queryMenu (name, defaultMenu, callback) {
+          Menus.query({
+            name: name,
+            defaultMenu: defaultMenu
+          }, function (menu) {
+            for (var i = 0; i < menu.length; i++) {
+                if (menu[i].module === "example"){
+                    if (menu[i].submenus) {
+                        $scope.modulemenus.push(menu[i].submenus)
+                    } else {
+                        $scope.modulemenus.push(menu[i])
+                    }
+                }
+            }
+            callback()
+          });
+        }
+
+        function updateSettings() {
+            for (var i = 0; i < $scope.modulemenus.length; i++) {
+                console.error('pre_' + $scope.modulemenus[i].name)
+                $scope.menu_settings['pre_' + $scope.modulemenus[i].name] = ['Organiser'];
+                $scope.menu_settings['peri_' + $scope.modulemenus[i].name] = ['Organiser'];
+                $scope.menu_settings['post_' + $scope.modulemenus[i].name] = ['Organiser'];
+            }
+        }
+
+        queryMenu('main', [], updateSettings);
+
+        console.error($scope.menu_settings)
 
         // Default package settings 
         $scope.defaultSettings = { packageName : 'Example',
@@ -38,6 +72,6 @@
         .module('mean.example')
         .controller('ExampleController', ExampleController);
 
-    ExampleController.$inject = ['$scope', 'Global', 'Example', '$stateParams'];
+    ExampleController.$inject = ['$scope', 'Global', 'Example', '$stateParams', 'Menus'];
 
 })();

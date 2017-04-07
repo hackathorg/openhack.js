@@ -1,11 +1,94 @@
-<div class="example-example" ng-controller="ExampleController">
-  <h1>Example view from your new awesome package</h1>
-  <h2>Package: <span>{{package.name}}{{packagesettings}} - {{default}}</span></h2>
-
-  <h3><img src="/example/assets/img/logo.png" /></h3>
-  </br>
-  <p class="alert alert-info">You can find your package in /packages/example</p>
-  </br>
-  <h3><a href="http://learn.mean.io">Documentation</a></h3>
-  </br>
+<div flex class="example-example" ng-controller="ExampleController">
+   <md-content layout="column" layout-padding flex>
+   <!-- Ticket Management -->
+    <div flex="100" layout-wrap layout="row" layout-align="space-around start" layout-padding>
+      <div flex-gt-md="66" flex-md="66" flex-xs="100" flex-sm="100" flex="66">
+        <md-card>
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-title">Ticket management</span>
+            </md-card-title-text>
+          </md-card-title>
+          <md-divider></md-divider>
+          <md-card-content>	
+          	<p>Manage your attendees tickets from here. </p><p>You can see who is already checked in and who is waiting to be checked in.</p>
+            <md-button class="md-primary md-raised">Upload</md-button>
+          </md-card-content>
+        </md-card>
+      </div>
+      <div flex-gt-md="33" flex-md="33" flex-xs="100" flex-sm="100">
+        <md-card>
+          <md-card-title style="padding:24px 16px 10px">
+            <md-card-title-text layout-wrap layout="row" layout-align="space-around start">
+              <span flex=50 class="md-title">Tickets</span>
+              <md-input-container style="padding:0px;margin:0px" flex=50 class="md-block">
+                <md-select ng-model="viewattendee">
+                  <md-option ng-repeat="thisattendee in viewattendeetype" value="{{thisattendee.type}}">
+                    {{thisattendee.type}}
+                  </md-option>
+                </md-select>
+              </md-input-container>
+            </md-card-title-text>
+          </md-card-title>
+          <md-divider></md-divider>
+          <md-list-item class="noright" aria-label="/profile/{{person.id}}" ui-sref="profile username({username: person.id})" mean-token="person.id">
+            <img alt="{{ person.name }}" ng-src="{{ person.img }}" class="md-avatar" />
+            <p> exampleuser2017</p>
+          </md-list-item>
+          <md-list-item class="noright" aria-label="/profile/{{person.id}}" ui-sref="profile username({username: person.id})" mean-token="person.id">
+            <img alt="{{ person.name }}" ng-src="{{ person.img }}" class="md-avatar" />
+            <p> exampleuser2017</p>
+          </md-list-item>
+          <md-list-item class="noright" aria-label="/profile/{{person.id}}" ui-sref="profile username({username: person.id})" mean-token="person.id">
+            <img alt="{{ person.name }}" ng-src="{{ person.img }}" class="md-avatar" />
+            <p> exampleuser2017</p>
+          </md-list-item>
+        </md-card>
+      </div>
+    </div>
+    <!-- Tickets -->
+    <div flex="100" layout-wrap layout="row" layout-align="space-around start" layout-padding>
+      <div flex-gt-md="66" flex-md="66" flex-xs="100" flex-sm="100">
+        <md-card>
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-title">Your Ticket</span>
+            </md-card-title-text>
+          </md-card-title>
+          <md-divider></md-divider>
+          <md-card-content layout-wrap layout="row" layout-align="space-around start" layout-padding>
+          	<div flex="50">
+          	<p> exampleuser2017</p>
+          	<p> QRCODE HERE</p>
+          	</div>
+          	<div flex="50">
+          	<p>Check in with the booth at the front desk, ensure you have your student card and your ticket ready!</p>
+          	</div>
+          </md-card-content>
+        </md-card>
+      </div>
+      <div flex-gt-md="33" flex-md="33" flex-xs="100" flex-sm="100">
+        <md-card>
+          <md-card-title>
+            <md-card-title-text>
+              <span class="md-title">Ticket Managers</span>
+            </md-card-title-text>
+          </md-card-title>
+          <md-divider></md-divider>
+          <md-list-item class="noright" aria-label="/profile/{{person.id}}" ui-sref="profile username({username: person.id})" mean-token="person.id">
+            <img alt="{{ person.name }}" ng-src="{{ person.img }}" class="md-avatar" />
+            <p> exampleuser2017</p>
+          </md-list-item>
+          <md-list-item class="noright" aria-label="/profile/{{person.id}}" ui-sref="profile username({username: person.id})" mean-token="person.id">
+            <img alt="{{ person.name }}" ng-src="{{ person.img }}" class="md-avatar" />
+            <p> exampleuser2017</p>
+          </md-list-item>
+          <md-list-item class="noright" aria-label="/profile/{{person.id}}" ui-sref="profile username({username: person.id})" mean-token="person.id">
+            <img alt="{{ person.name }}" ng-src="{{ person.img }}" class="md-avatar" />
+            <p> exampleuser2017</p>
+          </md-list-item>
+        </md-card>
+      </div>
+    </div>
+  </md-content>
 </div>

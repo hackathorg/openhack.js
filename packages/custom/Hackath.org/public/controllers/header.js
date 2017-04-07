@@ -11,7 +11,18 @@ angular.module('mean.system').controller('HeaderController', ['$scope', '$rootSc
     };
     
     // Get global menu settings
-    $scope.packageSettings = Header.packages.all();
+    var packageSettings = Header.packages.all();
+
+    // Get global event state
+    var eventSettings = Header.packages.get({packageName:"Event"});
+    $scope.eventState = "pre"
+
+    // for (var j = 0; j < eventSettings.settings.length; j++) {
+    //   if(eventSettings.settings[j].key === "EventState"){
+    //     $scope.eventState = eventSettings.settings[j].value
+    //     break;
+    //   }
+    // }
 
     // Default hard coded menu items for main menu
     var defaultMainMenu = [];
@@ -37,8 +48,8 @@ angular.module('mean.system').controller('HeaderController', ['$scope', '$rootSc
               }
             }
             for (var j = 0; j < settings.length; j++) {
-              if(settings[j] === "menu_settings"){
-                menu_settings = settings[j]
+              if(settings[j].key === "menu_settings"){
+                menu_settings = settings[j].value
                 break;
               }
             }
@@ -50,12 +61,21 @@ angular.module('mean.system').controller('HeaderController', ['$scope', '$rootSc
               // This menuitem is a singleton
               if (!menu[i].submenus.length) {
                 // return if it should be shown, based on current event status and ur circle info
-                // like .. if (menu_settings[menu[i].name + event status] contains ur circle info)
+                //console.error($scope.eventState + "_" + menu[i].name)
+                if (menu_settings[$scope.eventState + "_" + menu[i].name]){
+                  filteredMenu.push(menu[i])
+                } else {
+                  filteredMenu.push(menu[i])
+                }
               } else {
                 var submenu = [];
                 for (var j = 0; j < menu[i].submenus.length; j++) {
                   // return if it should be shown, based on current event status and ur circle info
-                  // like .. if (menu_settings[menu[i].submenus[j].name + event status] contains ur circle info){ add to submenu }
+                  if (menu_settings[$scope.eventState + "_" + menu[i].submenus[j].name]){
+                    submenu.push(menu[i].submenus[j]);
+                  } else {
+                    submenu.push(menu[i].submenus[j]);
+                  }
                 }
                 // If the submenu is non zero, add it to the menu item and add this to the final menu, otherwise dont add it
                 if (submenu.length) {
@@ -66,10 +86,11 @@ angular.module('mean.system').controller('HeaderController', ['$scope', '$rootSc
             }
           } else {
             // Its a default menu, and should be shown
+            //console.error(menu[i].name)
             filteredMenu.push(menu[i])
           }
         }
-
+        vm.menus[name] = filteredMenu
       });
     }
 
