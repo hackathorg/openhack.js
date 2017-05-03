@@ -2,6 +2,8 @@
 
 var mongoose = require('mongoose'),
 Package = mongoose.model('Settings');
+var https = require("https");
+var config = require('meanio').getConfig();
 
 module.exports = function(OpenhackPackages){
   return {
@@ -50,6 +52,22 @@ module.exports = function(OpenhackPackages){
           res.send(200,thispackage);
         }
       });
+    },
+    getevent: function(req, res) {
+      https.get('https://hackath.org/api/events/' + config.eventid, function(response) {
+        // Continuously update stream with data
+        var body = '';
+        response.on('data', function(d) {
+            body += d;
+        });
+        response.on('end', function() {
+
+            // Data reception is done
+            var parsed = JSON.parse(body);
+            res.send(parsed);
+        });
+
+      })
     }
   };
 };

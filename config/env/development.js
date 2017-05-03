@@ -15,6 +15,7 @@ module.exports = {
   app: {
     name: 'openhack.js'
   },
+  eventid: '5909fd5289e48e002385ed32',
   strategies: {
     local: {
       enabled: true

@@ -4,6 +4,11 @@
     function OpenhackPackages($http, $q, $resource) {
         return {
             name: 'openhack-packages',
+            events: $resource('api/event', {
+                event: {
+                    method: 'GET'
+                }
+            }),
             packages: $resource('api/openhackSettings/:packageName', {
                 packageName: '@packageName'
                 }, {

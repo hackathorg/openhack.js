@@ -16,6 +16,9 @@
         app.route('/api/openhackSettings/:packageName')
             .get(packages.getpackage)
             .put(packages.setpackage);
+        
+        app.get('/api/event', packages.getevent);
+
         app.get('/api/openhackSettings', packages.getpackages);
         app.get('/api/openhackPackagenames', packages.getpackagenames);
 

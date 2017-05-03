@@ -14,7 +14,9 @@
         OpenhackPackages.packages.update({packageName:"Test"}, $scope.testsettting);
         $scope.result = OpenhackPackages.packages.show({packageName:"Test"});
         $scope.allsettings = OpenhackPackages.packages.all();
-
+        
+        $scope.event = OpenhackPackages.events.$event()
+        
         $scope.checkCircle = function() {
             OpenhackPackages.checkCircle($stateParams.circle).then(function(response) {
                 $scope.res = response;

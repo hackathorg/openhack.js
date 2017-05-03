@@ -56,6 +56,8 @@
             }]
         };
 
+        $scope.qrcode = "https://api.qrserver.com/v1/create-qr-code/?data=HelloWorld&amp;size=100x100"
+
         $scope.default = false
         // Get the package settings
         $scope.packagesettings = Example.packages.show({packageName : 'Example'});
