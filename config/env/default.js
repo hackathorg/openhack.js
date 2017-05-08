@@ -19,7 +19,7 @@ module.exports = {
     }
   },
   hostname: process.env.HOST || process.env.HOSTNAME,
-  db: process.env.MONGODB_URI,
+  db: process.env.MONGO_URI,
   templateEngine: 'swig',
 
   // The secret should be set to a non-guessable string that
