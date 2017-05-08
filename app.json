@@ -1,0 +1,38 @@
+{
+    "name" : "openhack",
+    "description": "openhack.js is a deployable hackathon management tool created using the MEAN stack",
+    "keywords": [
+        "hackathon",
+        "event",
+        "organiser"
+    ],
+    "website": "https://hackath.org",
+    "repository": "https://github.com/hackathorg/openhack.js",
+    
+    "success_url": "/",
+
+    "env": {
+        "secret": {
+            "description": "A secret key for verifying the integrity of signed cookies.",
+            "generator": "secret"
+        },
+        "NODE_ENV": {
+            "description": "Node environment variable",
+            "value": "production"
+        },
+        "NODE_MODULES_CACHE": "false"
+        },
+
+    "addons": [
+        {
+            "plan": "mongolab:sandbox",
+            "as": "MONGO"
+        }
+    ],
+    "buildpacks": [
+        {
+        "url": "https://github.com/mholtom/heroku-buildpack-meanio"
+        }
+    ]
+
+}
