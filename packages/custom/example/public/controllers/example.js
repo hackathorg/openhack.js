@@ -56,7 +56,7 @@
             }]
         };
 
-        $scope.qrcode = "https://api.qrserver.com/v1/create-qr-code/?data=HelloWorld&amp;size=100x100"
+        $scope.qrcode = "https://api.qrserver.com/v1/create-qr-code/?data=dshjkasdjsadjas&amp;size=100x100"
 
         $scope.default = false
         // Get the package settings

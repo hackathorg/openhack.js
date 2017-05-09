@@ -1,7 +1,7 @@
 'use strict'
 
-var path = require('path')
-
+var path = require('path');
+var webpack = require('webpack');
 // var ngAnnotatePlugin = require('ng-annotate-webpack-plugin')
 
 module.exports = {
@@ -33,9 +33,12 @@ module.exports = {
     extensions: ['', '.webpack.js', '.web.js', '.ts', '.tsx', '.js']
   },
   plugins: [
-    // new ngAnnotatePlugin({
-    //   add: true,
-    //   // other ng-annotate options here
-    // })
+    new webpack.ResolverPlugin(
+      new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin("bower.json", ["main"])
+    ),
+    new webpack.ProvidePlugin({
+      'window.CodeMirror': 'codemirror'
+    })
   ]
+  
 }

@@ -1,10 +1,11 @@
 'use strict';
-
+import 'codemirror';
 import 'angular/angular-csp.css';
 import 'angular-ui-select/select.min.css';
 import 'angular-material/angular-material.min.css';
 
 import jQuery from 'jquery';
+
 import 'angular';
 import 'angular-ui-select/select';
 import 'angular-mocks';
@@ -15,7 +16,9 @@ import 'angular-ui-router';
 import 'angular-jwt';
 import 'angular-aria';
 import 'angular-animate';
+import 'angular-ui-codemirror';
 import 'angular-material';
+
 
 window.$ = jQuery;
 

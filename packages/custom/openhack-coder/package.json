@@ -1,0 +1,14 @@
+{
+  "name": "openhack-coder",
+  "version": "0.0.1",
+  "description": "Some description of openhack-coder",
+  "author": {
+    "name": "mean scaffold"
+  },
+  "mean": "0.7.0",
+  "dependencies": {},
+  "license": "MIT",
+  "scripts": {
+    "postinstall" : "bower install"
+  }
+}
